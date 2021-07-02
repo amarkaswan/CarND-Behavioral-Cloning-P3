@@ -93,4 +93,13 @@ The first two layers are used to preprocess the input images. In particular, the
 The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range `[-1, 1]`. The model has `770619` number trainable parameters. 
 
 ### Step 3, Training, Validation and Testing
-I have trained and validated the model for `5` epochs using training and validation data, respectively. I have utilized mini-batching and kept the batch size as`256`. I have used the adam optimizer, thus, did not require to tune the learning parameters manually. The following plot presents the epoch-wise training and valdiation mean squared error (mse). 
+I have trained and validated the model for `5` epochs using training and validation data, respectively. I have utilized mini-batching and kept the batch size as`256`. I have used the adam optimizer, thus, did not require to tune the learning parameters manually. The following plot presents the epoch-wise training and validation mean squared error (mse). 
+<p></p>
+<table>
+ <center>
+   <tr>
+    <td> <img src="./train_val_mse.jpg" width="250" height="150"> </td>
+  </tr>
+ </center>
+ </table>
+ <p></p>
