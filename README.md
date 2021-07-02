@@ -74,7 +74,21 @@ Next, I have replicated NVIDIA's PilotNet architecture, which has been shown to 
  </table>
  <p></p>
  
-The first two layers are used to preprocess the input images. In particular, the first layer crops out the top `60 pixels` and bottom `20 pixels` of each image that include unnecessary details such as sky, trees, and hills, and hood of the car, respectively. The second layer first normalizes the pixel intensities of each image and then standardizes them using mean shifting. 
+The first two layers are used to preprocess the input images. In particular, the first layer crops out the top `60 pixels` and bottom `20 pixels` of each image that include unnecessary details such as sky, trees, and hills, and hood of the car, respectively. The second layer first normalizes the pixel intensities of each image and then standardizes them using mean shifting. The original and cropped images are shown below. 
+<p></p>
+<table>
+ <center>
+   <tr>
+     <td>Original Image from Left Camera </td>
+    <td> Cropped Image from Center Camera </td>
+  </tr>
+   <tr>
+    <td> <img src="./examples/center.jpg" width="200" height="125"> </td>
+    <td> <img src="./examples/cropped_center.jpg" width="200" height="125"> </td>
+  </tr>
+ </center>
+ </table>
+ <p></p>
 
 The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range `[-1, 1]`. The model has `770619` number trainable parameters. 
 
