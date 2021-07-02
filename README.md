@@ -68,7 +68,7 @@ Next, I have replicated NVIDIA's PilotNet architecture, which has been shown to 
 <table>
  <center>
    <tr>
-     <td> <img src="./model_architecture.png" width="475" height="550"> </td>
+     <td> <img src="./model_architecture.png" width="450" height="520"> </td>
   </tr>
  </center>
  </table>
