@@ -57,7 +57,7 @@ Although Udacity has provided some sample driving data, but it was not sufficien
 * One lap of anti-clockwise driving around the second track.
 * Some data for recovery from left and right side of the road from both the tracks.
 
-The final [dataset](https://drive.google.com/file/d/1CdocKizqnD2FLT4QG6KNuuypv1DiBt_3/view?usp=sharing) has 130671 images along with their steering measurements. Then, I have shuffled and divided it into three parts: training (60%), validation (20%), and testing (20%) sets for reducing the overfitting. 
+The final [dataset](https://drive.google.com/file/d/1CdocKizqnD2FLT4QG6KNuuypv1DiBt_3/view?usp=sharing) has `130671` images along with their steering measurements. Then, I have shuffled and divided it into three parts: training (60%), validation (20%), and testing (20%) sets for reducing the overfitting. 
 
 ### Step 2: Model Architecture
 
@@ -76,6 +76,6 @@ Next, I have replicated NVIDIA's PilotNet architecture, which has been shown to 
  
 The first two layers are used to preprocess the input images. In particular, the first layer crops out the top `60 pixels` and bottom `20 pixels` of each image that include unnecessary details such as sky, trees, and hills, and hood of the car, respectively. The second layer first normalizes the pixel intensities of each image and then standardizes them using mean shifting. 
 
-The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range [-1, 1].
+The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range [-1, 1]. The model has `770619` number trainable parameters. 
 
 ### Step 3, Training, Validation and Testing
