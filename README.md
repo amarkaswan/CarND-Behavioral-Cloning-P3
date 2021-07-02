@@ -63,7 +63,7 @@ The final [dataset](https://drive.google.com/file/d/1CdocKizqnD2FLT4QG6KNuuypv1D
 
 Initially, I have implemented a modified version of [LeNet](https://en.wikipedia.org/wiki/LeNet) convolutional neural network architecture to develop the intended software pipeline. The code for the LeNet based software pipeline can be found in `model_LeNet` directroy. However, I did not obtain a successful model that could keep the vehicle within the drivable portion of the road.
 
-Next, I have replicated NVIDIA's PilotNet architecture, which has been shown to work effectively in an actual autonomous vehicle. Herein, I applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range [-1, 1]. The `model.py` contains the code of implemented software pipeline, and the below figure summarizes the said architecture.
+Next, I have replicated NVIDIA's PilotNet architecture, which has been shown to work effectively in an actual autonomous vehicle. The `model.py` contains the code of implemented software pipeline, and the below figure summarizes the said architecture.
 <p></p>
 <table>
  <center>
@@ -76,6 +76,6 @@ Next, I have replicated NVIDIA's PilotNet architecture, which has been shown to 
  
 The first two layers are used to preprocess the input images. In particular, the first layer crops out the top `60 pixels` and bottom `20 pixels` of each image that include unnecessary details such as sky, trees, and hills, and hood of the car, respectively. The second layer first normalizes the pixel intensities of each image and then standardizes them using mean shifting. 
 
-The next five layers consists of convolutional layer 
+The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range [-1, 1].
 
 ### Step 3, Training, Validation and Testing
