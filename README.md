@@ -38,9 +38,9 @@ The value of steering measurements lies between -1 and 1. Herein, the negative a
     <td> Image from Right Camera </td>
   </tr>
    <tr>
-     <td> <img src="./examples/left.jpg" width="200" height="125"> </td>
-    <td> <img src="./examples/center.jpg" width="200" height="125"> </td>
-    <td> <img src="./examples/right.jpg" width="200" height="125"> </td>
+     <td> <img src="./examples/left.jpg" width="200" height="105"> </td>
+    <td> <img src="./examples/center.jpg" width="200" height="105"> </td>
+    <td> <img src="./examples/right.jpg" width="200" height="105"> </td>
   </tr>
  </center>
  </table>
@@ -83,8 +83,8 @@ The first two layers are used to preprocess the input images. In particular, the
     <td> Cropped Image </td>
   </tr>
    <tr>
-    <td> <img src="./examples/center.jpg" width="200" height="125"> </td>
-    <td> <img src="./examples/cropped_center.jpg" width="200" height="75"> </td>
+    <td> <img src="./examples/center.jpg" width="200" height="105"> </td>
+    <td> <img src="./examples/cropped_center.jpg" width="200" height="70"> </td>
   </tr>
  </center>
  </table>
