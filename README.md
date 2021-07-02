@@ -112,4 +112,4 @@ I have included the following files in the repository:
 * `drive.py` is used to drive the vehicle in autonomous mode.
 * `model.h5` contains a trained convolution neural network.
 * `.mp4` files to demonstrate the capability of the software pipeline.
-* `readme.md` that summarizes the project.
+* `readme.md` summarizes the project.
