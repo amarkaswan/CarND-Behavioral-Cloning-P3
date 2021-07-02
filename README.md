@@ -84,7 +84,7 @@ The first two layers are used to preprocess the input images. In particular, the
   </tr>
    <tr>
     <td> <img src="./examples/center.jpg" width="200" height="125"> </td>
-    <td> <img src="./examples/cropped_center.jpg" width="200" height="125"> </td>
+    <td> <img src="./examples/cropped_center.jpg" width="200" height="75"> </td>
   </tr>
  </center>
  </table>
