@@ -98,7 +98,7 @@ I have trained and validated the model for `5` epochs using training and validat
 <table>
  <center>
    <tr>
-    <td> <img src="./train_val_mse.jpg" width="250" height="150"> </td>
+    <td> <img src="./train_val_mse.jpg" width="350" height="225"> </td>
   </tr>
  </center>
  </table>
