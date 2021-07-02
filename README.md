@@ -93,7 +93,7 @@ The first two layers are used to preprocess the input images. In particular, the
 The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range `[-1, 1]`. The model has `770619` number trainable parameters. 
 
 ### Step 3, Training, Validation and Testing
-I have trained and validated the model for `5` epochs using training and validation data, respectively. During the training, I utilized mini-batching with a batch size as`256` and employed the adam optimizer, so I did not need to manually tune the learning parameters. The following plot presents the epoch-wise training and validation mean squared error (mse). 
+I have trained and validated the model for `5` epochs using training and validation data, respectively. During the training, I utilized mini-batching with a batch size as`256` and employed a generator function to pull batch-wise data. It has ensured that I did not have to store all the data in the main memory at once. Similarly, I have utilized the adam optimizer to avoid manual tuning of the learning parameters. The following plot presents the epoch-wise training and validation mean squared error (mse). 
 <p></p>
 <table>
  <center>
@@ -104,4 +104,12 @@ I have trained and validated the model for `5` epochs using training and validat
  </table>
  <p></p>
  
-Next, I have evaluated the learned model using the testing set, and the test MSE was `0.03741862`. Besides, I have also tested the model using the simulator in autonomous mode for both tracks. I have observed that the model was able to keep the vehicle within the drivable part of the road. I have created videos of autonomous driving with 48 fps and 96 fps and included them in the repository. 
+Next, I have evaluated the learned model using the testing set, and the test MSE was `0.03741862`. Besides, I have also tested the model using the simulator in autonomous mode for both tracks. I have observed that the model was able to keep the vehicle within the drivable part of the road. Finally, I have created videos of autonomous driving with 48 fps and 96 fps and included them in the repository. 
+
+### Files Submitted
+I have included the following files in the repository:
+* `model.py` contains modular code of the software pipeline.
+* `drive.py` is used to drive the vehicle in autonomous mode.
+* `model.h5` contains a trained convolution neural network.
+* `.mp4` files to demonstrate the capability of the software pipeline.
+* `readme.md` that summarizes the project.
