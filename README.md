@@ -79,8 +79,8 @@ The first two layers are used to preprocess the input images. In particular, the
 <table>
  <center>
    <tr>
-     <td>Original Image from Left Camera </td>
-    <td> Cropped Image from Center Camera </td>
+     <td>Original Image </td>
+    <td> Cropped Image </td>
   </tr>
    <tr>
     <td> <img src="./examples/center.jpg" width="200" height="125"> </td>
