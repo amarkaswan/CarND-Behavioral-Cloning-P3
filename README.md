@@ -9,7 +9,7 @@ This section briefly outlines the key steps employed to implement the desired so
 
 Now, I will render a detailed discussion on each of the above-stated steps. 
 
-### Step 1: Data Collection
+## Step 1: Data Collection
 <strong> Udacity's Self-Driving Car Simulator:</strong> This simulator is developed by [Udacity](https://www.udacity.com/) to teach students how to train autonomous vehicles for driving on the roads using deep learning. The autonomous vehicle in the simulator is equipped with three front-facing cameras, namely left, center and right. Below is a pictorial of the same.
 <p></p>
 <table>
@@ -59,7 +59,7 @@ Although Udacity has provided some sample driving data, but it was not sufficien
 
 The final [dataset](https://drive.google.com/file/d/1CdocKizqnD2FLT4QG6KNuuypv1DiBt_3/view?usp=sharing) has `130671` images along with their steering measurements. Then, I have shuffled and divided it into three parts: training (`60%`), validation (`20%`), and testing (`20%`) sets for reducing the overfitting. 
 
-### Step 2: Model Architecture
+## Step 2: Model Architecture
 
 Initially, I have implemented a modified version of [LeNet](https://en.wikipedia.org/wiki/LeNet) convolutional neural network architecture to develop the intended software pipeline. The code for the LeNet based software pipeline can be found in `model_LeNet` directroy. However, I did not obtain a successful model that could keep the vehicle within the drivable portion of the road.
 
@@ -92,7 +92,7 @@ The first two layers are used to preprocess the input images. In particular, the
 
 The subsequent five layers have consisted of convolutional layers followed by a flattened layer. Then, the last four layers are comprised of fully connected dense layers. Herein, I have applied the ReLu activation function at each convolution layer and dense intermediate layers for adding nonlinearity. Lastly, I have used a tangent hyperbolic activation function at the output layer since predicted steering measurement must lie in the range `[-1, 1]`. The model has `770619` number trainable parameters. 
 
-### Step 3, Training, Validation and Testing
+## Step 3, Training, Validation and Testing
 I have trained and validated the model for `5` epochs using training and validation data, respectively. During the training, I utilized mini-batching with a batch size as`256` and employed a generator function to pull batch-wise data. It has ensured that I did not have to store all the data in the main memory at once. Similarly, I have utilized the adam optimizer to avoid manual tuning of the learning parameters. The following plot presents the epoch-wise training and validation mean squared error (mse). 
 <p></p>
 <table>
@@ -106,7 +106,21 @@ I have trained and validated the model for `5` epochs using training and validat
  
 Next, I have evaluated the learned model using the testing set, and the test MSE was `0.03741862`. Besides, I have also tested the model using the simulator in autonomous mode for both tracks. I have observed that the model was able to keep the vehicle within the drivable part of the road. Finally, I have created videos of autonomous driving with 48 fps and 96 fps and included them in the repository. 
 
-### Files Submitted
+## Experimental Results
+
+The trained model was then fed to the simulator to test on both the tracks. The performance of the trained model is shown below using videos.
+
+
+https://user-images.githubusercontent.com/14021388/218278691-b23afc28-070c-4fcf-9d9a-b5aa5835d3d7.mp4
+
+
+
+https://user-images.githubusercontent.com/14021388/218278700-36f14aa9-df56-4187-9740-72c80f80b5af.mp4
+
+
+
+## Files Submitted
+
 I have included the following files in the repository:
 * `model.py` contains modular code of the software pipeline.
 * `drive.py` is used to drive the vehicle in autonomous mode.
